@@ -6,11 +6,12 @@
 /*   By: gfielder <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 18:37:42 by gfielder          #+#    #+#             */
-/*   Updated: 2019/04/22 17:53:36 by gfielder         ###   ########.fr       */
+/*   Updated: 2019/04/23 15:34:16 by gfielder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <errno.h>
 #include "ls.h"
 #include "libft.h"
 #include "libftprintf.h"
@@ -65,12 +66,11 @@ static int	is_dir(char *str)
 {
 	DIR	*dir;
 
-	if ((dir = opendir(str)) != NULL)
-	{
+	if (((dir = opendir(str)) == NULL) && (errno == 20))
+		return (0);
+	if (dir != NULL)
 		closedir(dir);
-		return (1);
-	}
-	return (0);
+	return (1);
 }
 
 int			main(int argc, char **argv)

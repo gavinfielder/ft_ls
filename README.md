@@ -2,6 +2,8 @@
 
 A recode of the UNIX shell command `ls`. Part of 42 Curriculum.
 
+*Score 118/119*  
+
 ## Mandatory Options Implemented
 
  - `-l` long form
