@@ -31,6 +31,10 @@ A recode of the UNIX shell command `ls`. Part of 42 Curriculum.
  - `-@` print extended attributes
  - `-[2-9]` (not a feature of standard ls) limit recursion depth when used with `-R`
 
+## Notes on the 42 subject
+
+ft\_ls is not required to have identically formatted output to ls. I bothered to make it close in most cases, but a significant different that I didn't bother aligning is that the system implementation of ls typically performs depth-first search, whereas I perform breadth-first search for recursive directory expansion.
+
 ## Credits
 
 All code is written by me
